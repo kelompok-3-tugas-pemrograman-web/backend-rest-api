@@ -17,7 +17,6 @@ class StudentResource extends JsonResource
         return [
             'id'=>$this->id,
             'npm'=>$this->npm,
-            // 'npm'=>route('students.show', $this->npm),
             'nama'=>$this->nama,
             'kelas'=>$this->kelas,
             'jurusan'=>$this->jurusan,

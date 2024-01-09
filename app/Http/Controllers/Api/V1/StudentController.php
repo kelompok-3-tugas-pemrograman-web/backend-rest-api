@@ -14,6 +14,9 @@ class StudentController extends Controller
     public function index(){
         return new StudentCollection(Student::all());
     }
+    public function show(Student $student){
+        return new StudentResource($student);
+    }
 
     public function store(StoreStudentRequest $request){
         Student::create($request->validated());
@@ -25,9 +28,7 @@ class StudentController extends Controller
         return response()->json("Student's data is updated successfully.");
     }
 
-    public function show(Student $student){
-        return new StudentResource($student);
-    }
+    
 
     public function destroy(Student $student){
         $student->delete();
